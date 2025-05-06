@@ -1,11 +1,17 @@
 import React from "react";
+import styled from "styled-components";
 
 const UserInfo = () => {
   return (
-    <div>
+    <ContainerDiv>
       <h1>Jasmina</h1>
-    </div>
+    </ContainerDiv>
   );
 };
 
 export default UserInfo;
+
+const ContainerDiv = styled.div`
+  color: white;
+  padding: 10px;
+`;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 const ChatInput = (props) => {
   const [text, setText] = useState("");
@@ -9,15 +10,36 @@ const ChatInput = (props) => {
   };
 
   return (
-    <div>
-      <input
+    <ContainerDiv>
+      <Input
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Напишите сообщение..."
       />
-      {text !== "" ? <button onClick={massageHandler}>Отправить</button> : null}
-    </div>
+      {text !== "" ? <Button onClick={massageHandler}>Отправить</Button> : null}
+    </ContainerDiv>
   );
 };
 
 export default ChatInput;
+
+const ContainerDiv = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+const Input = styled.input`
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+`;
+
+const Button = styled.button`
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+`;
